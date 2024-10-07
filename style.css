@@ -1,0 +1,515 @@
+/* General Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #1b1b1d, #111);
+    color: white;
+    perspective: 1000px; /* Enables 3D depth */
+    overflow-x: hidden;
+}
+
+/* Header Styling */
+header {
+    text-align: center;
+    padding: 50px 0;
+    background: #111;
+    border-bottom: 2px solid #ff1744;
+    transform: translateZ(0);
+}
+
+header h1 {
+    font-size: 4rem;
+    color: #ff1744;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-shadow: 0px 0px 20px rgba(255, 23, 68, 0.8);
+    animation: headerGlow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes headerGlow {
+    from {
+        text-shadow: 0 0 20px rgba(255, 23, 68, 0.6), 0 0 30px rgba(255, 23, 68, 0.4);
+    }
+    to {
+        text-shadow: 0 0 30px rgba(255, 23, 68, 1), 0 0 60px rgba(255, 23, 68, 0.8);
+    }
+}
+
+.team-logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Navigation Bar Styling */
+nav {
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+nav a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 23, 68, 0.4);
+    transition: all 0.3s ease;
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+nav a:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+nav a:hover {
+    color: #ff1744;
+}
+
+Hero Section
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('bg.jpg') center/cover no-repeat fixed;
+    box-shadow: inset 0 0 150px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content {
+    text-align: center;
+    transform: translateZ(50px);
+    z-index: 1;
+}
+
+.hero h2 {
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('bg.jpg') center/cover no-repeat fixed;
+    box-shadow: inset 0 0 150px rgba(0, 0, 0, 0.7); /* Dark overlay to enhance text visibility */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2; /* Make sure content stays above the background and animation */
+    text-align: center;
+    color: white;
+}
+
+.lottie-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Behind the hero content */
+    overflow: hidden; /* Prevents scrolling if needed */
+    pointer-events: none; /* Allow interaction with content over the animation */
+}
+
+.lottie-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none; /* Remove the border */
+}
+
+.lottie-container2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Behind the hero content */
+    overflow: hidden; /* Prevents scrolling if needed */
+    pointer-events: none; /* Allow interaction with content over the animation */
+}
+
+.lottie-container2 iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none; /* Remove the border */
+}
+.cta-buttons {
+    margin-top: 20px;
+}
+
+.cta-buttons button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #ff5733;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.cta-buttons button:hover {
+    background-color: #ff7733;
+}
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cta-buttons button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    margin: 15px;
+    background-color: #ff1744;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.cta-buttons button:hover {
+    background-color: #ff4757;
+    transform: translateY(-5px);
+}
+
+.cta-buttons button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.cta-buttons button:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Team Roster */
+.team-roster {
+    background-color: #222;
+    padding: 80px 0;
+    text-align: center;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.8);
+}
+
+.team-roster h3 {
+    font-size: 2.5rem;
+    color: #ff1744;
+    margin-bottom: 50px;
+}
+
+.player-card {
+    display: inline-block;
+    margin: 20px;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 20px;
+    width: 220px;
+    height: 220px;
+    transition: all 0.4s ease;
+    transform: perspective(500px) rotateY(0deg);
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.7);
+}
+
+.player-card:hover {
+    transform: perspective(500px) rotateY(10deg) translateY(-10px);
+}
+
+.card-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.player-card:hover .card-img {
+    transform: scale(1.1);
+}
+
+.player-card h4 {
+    font-size: 1.4rem;
+    color: #fff;
+}
+
+.player-card p {
+    color: #aaa;
+    font-size: 1rem;
+}
+
+/* Featured Section */
+.featured-content {
+    padding: 60px 0;
+    text-align: center;
+    background-color: #111;
+    color: #fff;
+}
+
+.featured-content h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ff1744;
+}
+
+.featured-content p {
+    font-size: 1.1rem;
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #222;
+    text-align: center;
+    padding: 30px 0;
+    font-size: 0.9rem;
+    color: #fff;
+    border-top: 1px solid #ff1744;
+}
+
+footer .social-media a {
+    color: #ff1744;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+footer .social-media a:hover {
+    color: #ff4757;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h2 {
+        font-size: 2.2rem;
+    }
+    
+    .cta-buttons button {
+        font-size: 1rem;
+        padding: 12px 25px;
+    }
+
+    .player-card {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+
+
+h2 {
+    font-family: 'Bebas Neue', sans-serif; /* Bold, sporty font */
+    font-size: 4.5rem; /* Large size for impact */
+    text-transform: uppercase; /* Strong uppercase look */
+    color: #fff; /* White text for high contrast */
+    letter-spacing: 8px; /* Distinct letter spacing */
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7), 0 0 15px rgba(255, 165, 0, 0.6); /* Subtle shadow with a glow */
+    position: relative;
+    background: linear-gradient(90deg, #ff7f50, #ff4500, #ff7f50); /* Gradient with fire colors (Coral, OrangeRed) */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Make the text have gradient fill */
+    padding: 12px 30px;
+    display: inline-block;
+    transition: all 0.3s ease; /* Smooth hover effect */
+    transform: skewX(-3deg); /* Skewed effect for a dynamic look */
+}
+
+/* Hover effect */
+h2:hover {
+    color: #fff; /* Keep white text on hover */
+    background: none; /* Remove gradient on hover */
+    text-shadow: 6px 6px 20px rgba(255, 99, 71, 0.9), 0 0 35px rgba(255, 69, 0, 0.8); /* Stronger glow and shadow */
+    transform: scale(1.1) skewX(-3deg); /* Slight enlargement with the skew on hover */
+    box-shadow: 0px 0px 40px rgba(255, 99, 71, 0.8); /* Strong glow box-shadow */
+}
+
+/* Orange background styling for light themes */
+body.light-theme {
+    background-color: #f28500; /* Light orange background */
+    color: #ffffff; /* Text color adjusted for contrast */
+}
+
+/* Dark blue background styling for dark themes */
+body.dark-theme {
+    background-color: #1c2a48; /* Dark blue background */
+    color: #ffffff; /* White text for high contrast */
+}
+
+
+
+
+
+@media (max-width: 768px) {
+    .lottie-container {
+        display: none;
+    }
+}
+
+/* Ensure the div is visible on larger screens (above 768px wide) */
+@media (min-width: 769px) {
+    .lottie-container {
+        display: block;
+    }
+}
+
+
+/* Hide the div on screens wider than 768px (tablet/desktop) */
+@media screen and (min-width: 769px) {
+    .lottie-container2 {
+        display: none; /* Hides the div on larger screens */
+    }
+}
+
+/* Show the div on screens smaller than 768px (mobile) */
+@media screen and (max-width: 768px) {
+    .lottie-container2 {
+        display: block; /* Displays the div on mobile screens */
+    }
+}
+
+
+
+
+/* Player Card */
+.player-card {
+    position: relative;
+    width: 230px;
+    padding: 20px;
+    margin: 15px;
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay to ensure text is visible */
+}
+
+/* Images and Text Positioning */
+.player-card img, .player-card h4, .player-card p {
+    position: relative;
+    z-index: 2; /* Content stays on top of the iframe background */
+}
+
+/* iFrame as Background */
+.iframe-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Ensure the iframe stays behind the content */
+    overflow: hidden;
+}
+
+.iframe-bg iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    pointer-events: none; /* Disable interaction with iframe */
+}
+
+/* Hover Effects */
+.player-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
+}
+
+/* Fire Theme */
+.player-card.fire {
+    border: 2px solid #ff4500;
+}
+
+.player-card.fire h4, .player-card.fire p {
+    color: #ff4500;
+}
+
+/* Ice Theme */
+.player-card.ice {
+    border: 2px solid #00bfff;
+}
+
+.player-card.ice h4, .player-card.ice p {
+    color: #00bfff;
+}
+
+/* Electric Theme */
+.player-card.electric {
+    border: 2px solid #ffd700;
+}
+
+.player-card.electric h4, .player-card.electric p {
+    color: #ffd700;
+}
+
+/* Earth Theme */
+.player-card.earth {
+    border: 2px solid #8b4513;
+}
+
+.player-card.earth h4, .player-card.earth p {
+    color: #8b4513;
+}
+
+/* Wind Theme */
+.player-card.wind {
+    border: 2px solid #ffffff;
+}
+
+.player-card.wind h4, .player-card.wind p {
+    color: #ffffff;
+}
