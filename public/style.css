@@ -471,11 +471,11 @@ body.dark-theme {
 
 /* Fire Theme */
 .player-card.fire {
-    border: 2px solid #ff4500;
+    border: 2px solid #fffefd;
 }
 
 .player-card.fire h4, .player-card.fire p {
-    color: #ff4500;
+    color: #fffefd;
 }
 
 /* Ice Theme */
